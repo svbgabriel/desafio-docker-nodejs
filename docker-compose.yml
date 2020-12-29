@@ -1,17 +1,17 @@
 version: '3.8'
 
-services: 
+services:
   db:
-    image: mysql:8
-    environment: 
+    image: mysql:5.7
+    environment:
       MYSQL_DATABASE: app
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: root
     container_name: db
-    volumes: 
+    volumes:
       - mysql_data:/var/lib/mysql
     restart: always
     tty: true
 
-volumes: 
+volumes:
   mysql_data:
