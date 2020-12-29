@@ -13,5 +13,11 @@ services:
     restart: always
     tty: true
 
+  app:
+    build: app
+    container_name: app
+    depends_on:
+      - db
+
 volumes:
   mysql_data:
