@@ -16,8 +16,20 @@ services:
   app:
     build: app
     container_name: app
+    restart: always
+    tty: true
     depends_on:
       - db
+
+  proxy:
+    build: proxy
+    container_name: proxy
+    restart: always
+    tty: true
+    ports:
+      - "8080:8080"
+    depends_on:
+      - app
 
 volumes:
   mysql_data:
